@@ -1,15 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+//CSS
 import './App.css'
 
+//React
+import { useState, useCallback, useEffect } from 'react'
+
+//Data
+import {gamelist} from './data/list'
+
+//Components
+import StartScreen from './components/StartScreen'
+import GameScreen from './components/GameScreen'
+import EndScreen from './components/EndScreen'
+
+
+const stages = [
+  {id: 1, name: 'start'},
+  {id: 2, name: 'game'},
+  {id: 3, name: 'end'},
+];
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [gameStage, setGameStage] = useState(stages[0].name);
+  const [list] = useState(gamelist)
 
   return (
     <>
       <div className='App'>
-        <h1>Jogo da forca</h1>
+        
+        {gameStage === 'start' && <StartScreen/>}
+        {gameStage === 'game' && <GameScreen/>}
+        {gameStage === 'end' && <EndScreen/>}
       </div>
 
     </>
