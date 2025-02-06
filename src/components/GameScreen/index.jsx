@@ -13,7 +13,7 @@ export default function GameScreen({verifyLetter}) {
       </h3>
       <div className="wordContainer">
         <span className="letter">A</span>
-        <span className="blankSquare"></span>
+        <span className="blankSquare">a</span>
       </div>
       <div className="letterContainer">
         <p>Tente adv        inhar uma letra da palavra:</p>
